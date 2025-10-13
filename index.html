@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zudeeee 💫</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffd700 0%, #1e90ff 100%);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .message {
+      position: absolute;
+      color: white;
+      font-size: 24px;
+      animation: fall linear;
+      white-space: nowrap;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -50px;
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+
+    .center-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: white;
+      text-align: center;
+      text-shadow: 3px 3px 5px #000;
+      max-width: 90%;
+      line-height: 1.4em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-message">
+    Bu sadece sana özel bebek 💫<br>
+    Benimle beraber hayatı yaşıycaksın 💖
+  </div>
+
+  <script>
+    const messages = [
+      "Enerjine bayılıyorum ⚡",
+      "Saçlarını asla boyatma 😍",
+      "Neco sana bayılıyorrrr 🧸",
+      "Zudeeee bir başka 💫",
+      "Günaydın mesajlarını biraz daha samimi yazzz ☀️",
+      "Senin enerjin başka 🩷",
+      "Tatlılığın limitleri aştı 😌",
+      "Sude vibes 100/100 💋"
+    ];
+
+    function createMessage() {
+      const message = document.createElement("div");
+      message.classList.add("message");
+      message.innerText = messages[Math.floor(Math.random() * messages.length)];
+      message.style.left = Math.random() * window.innerWidth + "px";
+      message.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(message);
+
+      setTimeout(() => {
+        message.remove();
+      }, 5000);
+    }
+
+    setInterval(createMessage, 200);
+  </script>
+
+</body>
+</html>

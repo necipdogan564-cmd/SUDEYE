@@ -2,84 +2,75 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zudeeee 💫</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Günaydın Zudeeee 💖</title>
   <style>
     body {
       margin: 0;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ffd700 0%, #1e90ff 100%);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-    }
-
-    .message {
-      position: absolute;
-      color: white;
-      font-size: 4.5vw; /* mobil uyumlu font boyutu */
-      animation: fall linear;
-      white-space: nowrap;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    @keyframes fall {
-      0% {
-        top: -50px;
-        opacity: 1;
-      }
-      100% {
-        top: 100%;
-        opacity: 0;
-      }
-    }
-
-    .center-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 6vw; /* ekran genişliğine göre büyür */
-      color: white;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      text-shadow: 3px 3px 5px #000;
-      max-width: 90%;
-      line-height: 1.4em;
+      color: #ff3399;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 0.3em;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .flower {
+      font-size: 2.5em;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      padding: 0 20px;
+      color: #cc0066;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.95em;
+      color: #999;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); color: #ff99cc; }
+      50% { transform: scale(1.2); color: #ff1a75; }
+      100% { transform: scale(1); color: #ff99cc; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-
-  <div class="center-message">
-    Bu sadece sana özel bebek 💫<br>
-    Benimle beraber hayatı yaşıycaksın 💖
-  </div>
-
-  <script>
-    const messages = [
-      "Enerjine bayılıyorum ⚡",
-      "Saçlarını asla boyatma 😍",
-      "Neco sana bayılıyorrrr 🧸",
-      "Zudeeee bir başka 💫",
-      "Günaydın mesajlarını biraz daha samimi yazzz ☀️",
-      "Senin enerjin başka 🩷",
-      "Tatlılığın limitleri aştı 😌",
-      "Sude vibes 100/100 💋"
-    ];
-
-    function createMessage() {
-      const message = document.createElement("div");
-      message.classList.add("message");
-      message.innerText = messages[Math.floor(Math.random() * messages.length)];
-      message.style.left = Math.random() * window.innerWidth + "px";
-      message.style.animationDuration = (2 + Math.random() * 3) + "s";
-      document.body.appendChild(message);
-
-      setTimeout(() => {
-        message.remove();
-      }, 5000);
-    }
-
-    setInterval(createMessage, 200);
-  </script>
-
+  <div class="flower">🌸</div>
+  <h1>Günaydın Zudeeee 💞</h1>
+  <p>
+    Bu sayfa <strong>sadece Sude için</strong> hazırlandı 💗<br/>
+    Her sabah seninle başlasın istedim. Çünkü sen, günümün en güzel parçasısın.<br/>
+    Bugünün de tıpkı senin gibi, tatlı mı tatlı geçsin!
+  </p>
+  <div class="footer">Senin için kodlandı... – s.rekli 💻❤️</div>
 </body>
 </html>

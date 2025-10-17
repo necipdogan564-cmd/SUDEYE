@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Barış için özel mesaj 💻</title>
+  <title>Günaydın Sude 💖</title>
   <style>
     * {
       margin: 0;
@@ -15,53 +15,68 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #000000, #434343);
+      background: linear-gradient(135deg, #ff7eb3, #ff758c, #ffb199);
+      background-size: 300% 300%;
+      animation: bgMove 10s ease infinite;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
       text-align: center;
       color: white;
       position: relative;
+      z-index: 2;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
       animation: fadeIn 2s ease-in-out;
     }
 
     h1 {
       font-size: 3rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #00f5ff, #00ff95, #ffffff);
+      background: linear-gradient(90deg, #fff8dc, #ffefba, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
       animation: glow 3s infinite alternate;
     }
 
     p {
       margin-top: 15px;
-      font-size: 1.3rem;
-      color: #ddd;
-      letter-spacing: 1px;
+      font-size: 1.2rem;
+      color: #ffe9f0;
+      line-height: 1.5;
     }
 
     .code-line {
-      margin-top: 30px;
-      background: rgba(255,255,255,0.08);
+      margin-top: 25px;
+      background: rgba(255, 255, 255, 0.12);
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-family: 'Courier New', Courier, monospace;
       text-align: left;
       white-space: pre-wrap;
       font-size: 1rem;
-      color: #00ffb3;
-      border-left: 3px solid #00ffb3;
-      box-shadow: 0 0 15px #00ffb360;
+      color: #fff6c0;
+      border-left: 4px solid #ffe082;
+      box-shadow: 0 0 15px rgba(255, 223, 140, 0.5);
       animation: slideIn 1.8s ease-out;
     }
 
     @keyframes glow {
-      0% { text-shadow: 0 0 10px #00f5ff; }
-      100% { text-shadow: 0 0 25px #00ff95; }
+      0% { text-shadow: 0 0 10px #ffffff; }
+      100% { text-shadow: 0 0 25px #fff3b0; }
     }
 
     @keyframes fadeIn {
@@ -74,34 +89,41 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    .glow-circle {
+    /* Yıldız efekti */
+    .star {
       position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(0,255,187,0.3) 0%, transparent 70%);
-      filter: blur(50px);
-      animation: float 6s infinite ease-in-out alternate;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+      opacity: 0;
     }
 
-    @keyframes float {
-      from { transform: translate(0, 0); }
-      to { transform: translate(50px, 30px); }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: translate(0, 0) scale(1); }
+      50% { opacity: 1; transform: translate(20px, -30px) scale(1.5); }
     }
+
   </style>
 </head>
 <body>
+  <!-- yıldızlar -->
+  <div class="star" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
+  <div class="star" style="top: 70%; left: 60%; animation-delay: 1s;"></div>
+  <div class="star" style="top: 40%; left: 80%; animation-delay: 2s;"></div>
+  <div class="star" style="top: 80%; left: 20%; animation-delay: 1.5s;"></div>
+
   <div class="container">
-    <div class="glow-circle"></div>
-    <h1>Barış 👑</h1>
-    <p>Kardeşim… bu satırları senin için yazdım. <br>
-       Havalı, özel ve unutulmaz olsun diye 💥</p>
+    <h1>Günaydın Sude 🌞</h1>
+    <p>Sen uyurken ben burada senin için bu kodları yazdım 💻<br>
+    Güne seninle başlamak güzel bir alışkanlık olacak gibi ✨</p>
 
     <div class="code-line">
-      &lt;div class="friendship"&gt;<br>
-      &nbsp;&nbsp;&lt;p&gt;Gerçek dostluk; her zaman yanında olanla değil,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;yanında olduğunda değer katanladır.&lt;/p&gt;<br>
+      &lt;div class="message"&gt;<br>
+      &nbsp;&nbsp;&lt;p&gt;Yeni bir gün, seninle daha güzel 🌸&lt;/p&gt;<br>
       &lt;/div&gt;
     </div>
   </div>

@@ -1,221 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Günaydın Sude 🌞</title>
-<style>
-  :root{
-    --bg1:#0f1022;
-    --bg2:#1b2740;
-    --accent:#ff7aa2;
-    --sun:#FFD36E;
-  }
-  html,body{
-    height:100%;
-    margin:0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-    color:#fff;
-  }
-  .card{
-    width:min(760px,95vw);
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    border-radius:18px;
-    box-shadow: 0 10px 30px rgba(2,6,23,0.7);
-    overflow:hidden;
-    position:relative;
-  }
-  .hero{
-    height:320px;
-    background: linear-gradient(180deg,#081226 0%, #081826 60%);
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-  }
-  .sun{
-    position:absolute;
-    bottom:40%;
-    width:180px;
-    height:180px;
-    background: radial-gradient(circle at 30% 30%, #fff7d6, var(--sun) 40%, #ffb44d 70%);
-    border-radius:50%;
-    filter:drop-shadow(0 8px 40px rgba(255,180,80,0.18));
-    transform:translateY(30px) scale(0.9);
-    animation: rise 3s ease-out forwards;
-    z-index:1;
-  }
-  @keyframes rise{
-    to { transform: translateY(-10px) scale(1); }
-  }
-  .sun::after{
-    content:"";
-    position:absolute;
-    inset:-40px;
-    border-radius:50%;
-    background: radial-gradient(circle, rgba(255,210,120,0.12), transparent 40%);
-    animation: pulse 4s infinite;
-  }
-  @keyframes pulse{
-    0%{ transform:scale(0.9); opacity:0.6 }
-    50%{ transform:scale(1.05); opacity:1 }
-    100%{ transform:scale(0.9); opacity:0.6 }
-  }
-  .cloud{
-    position:absolute;
-    bottom:38%;
-    height:70px;
-    width:160px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-    border-radius:40px;
-    filter: blur(2px);
-    transform: translateX(-40%);
-    animation: floatX 10s linear infinite;
-    z-index:0;
-  }
-  .cloud.small{ width:120px; bottom:42%; left:15%; opacity:0.9; animation-duration:14s;}
-  .cloud.left{ left:5%; }
-  .cloud.right{ right:6%; transform: translateX(40%); animation-direction:reverse; opacity:0.85; }
-  @keyframes floatX{
-    0%{ transform: translateX(-30px) }
-    50%{ transform: translateX(30px) }
-    100%{ transform: translateX(-30px) }
-  }
-  .content{
-    padding:28px;
-    display:flex;
-    gap:20px;
-    align-items:center;
-  }
-  .text{ flex:1; }
-  h1{
-    font-size: clamp(20px, 4vw, 32px);
-    margin:0 0 8px 0;
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .name{
-    background: linear-gradient(90deg,var(--accent), #7ee0ff);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    font-weight:700;
-  }
-  p{
-    margin:6px 0 0 0;
-    color: #d6e1ffcc;
-    line-height:1.45;
-  }
-  .typewriter{
-    display:inline-block;
-    margin-top:12px;
-    font-weight:600;
-    color:#fff;
-    white-space:nowrap;
-    overflow:hidden;
-    border-right:3px solid rgba(255,255,255,0.12);
-    width:0ch;
-    animation: type 3.2s steps(22) 0.5s forwards, caret 0.7s steps(1) infinite;
-  }
-  @keyframes type { to { width:22ch; } }
-  @keyframes caret{ 50%{ border-color: transparent; } }
+  <meta charset="UTF-8">
+  <title>Barış için özel mesaj 💻</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .heart-wrap{
-    width:200px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding-right:18px;
-  }
-  .heart{
-    width:120px;
-    height:120px;
-    transform:scale(0.95);
-    transition: transform .4s cubic-bezier(.2,.9,.3,1);
-    filter: drop-shadow(0 12px 28px rgba(255,120,160,0.18));
-  }
-  .heart svg{ width:100%; height:100% }
-  .beat{ animation: beat .9s infinite; }
-  @keyframes beat{
-    0%{ transform:scale(0.95) }
-    40%{ transform:scale(1.06) }
-    100%{ transform:scale(0.98) }
-  }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #000000, #434343);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
 
-  /* Alttaki özel mesaj */
-  .footer-note{
-    text-align:center;
-    font-size:14px;
-    color: rgba(255,255,255,0.45);
-    padding:14px;
-    font-style:italic;
-    border-top:1px solid rgba(255,255,255,0.05);
-  }
+    .container {
+      text-align: center;
+      color: white;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-  @media (max-width:700px){
-    .content{ flex-direction:column; padding:18px; gap:16px; }
-    .heart-wrap{ width:100%; padding-right:0; }
-    .heart{ width:100px; height:100px; }
-  }
-</style>
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #00f5ff, #00ff95, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      color: #ddd;
+      letter-spacing: 1px;
+    }
+
+    .code-line {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.08);
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: left;
+      white-space: pre-wrap;
+      font-size: 1rem;
+      color: #00ffb3;
+      border-left: 3px solid #00ffb3;
+      box-shadow: 0 0 15px #00ffb360;
+      animation: slideIn 1.8s ease-out;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00f5ff; }
+      100% { text-shadow: 0 0 25px #00ff95; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .glow-circle {
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,255,187,0.3) 0%, transparent 70%);
+      filter: blur(50px);
+      animation: float 6s infinite ease-in-out alternate;
+    }
+
+    @keyframes float {
+      from { transform: translate(0, 0); }
+      to { transform: translate(50px, 30px); }
+    }
+  </style>
 </head>
 <body>
-  <div class="card">
-    <div class="hero">
-      <div class="sun"></div>
-      <div class="cloud left"></div>
-      <div class="cloud small right"></div>
-    </div>
+  <div class="container">
+    <div class="glow-circle"></div>
+    <h1>Barış 👑</h1>
+    <p>Kardeşim… bu satırları senin için yazdım. <br>
+       Havalı, özel ve unutulmaz olsun diye 💥</p>
 
-    <div class="content">
-      <div class="text">
-        <h1>Günaydın <span class="name">Sude</span> 🌞</h1>
-        <p>Bugün senin için harika bir gün olsun. İçindeki güneş hiç sönmesin, yüzündeki gülümseme hep kalsın.</p>
-        <div class="typewriter" id="type">Seni seviyorum. 💖</div>
-      </div>
-
-      <div class="heart-wrap">
-        <div class="heart" id="heartSvg">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#ffffff" d="M23.6 3.6c-2.3 0-4.3 1.4-5.6 3.4-1.3-2-3.3-3.4-5.6-3.4-3.9 0-6.9 3.5-6.9 7.6 0 8.3 12.5 13.7 12.5 13.7s12.5-5.4 12.5-13.7c0-4.1-3-7.6-6.9-7.6z"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-note">
-      Sen uyurken ben burada senin için bu kodları yazdım 💻✨
+    <div class="code-line">
+      &lt;div class="friendship"&gt;<br>
+      &nbsp;&nbsp;&lt;p&gt;Gerçek dostluk; her zaman yanında olanla değil,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;yanında olduğunda değer katanladır.&lt;/p&gt;<br>
+      &lt;/div&gt;
     </div>
   </div>
-
-<script>
-  const messages = ["Seni seviyorum. 💖", "Gülüşün günümü aydınlatıyor.", "Bugün harika geçsin! 🌷"];
-  let i = 0;
-  const typeEl = document.getElementById('type');
-  function rotateType(){
-    i = (i+1) % messages.length;
-    typeEl.style.width = '0ch';
-    typeEl.textContent = messages[i];
-    void typeEl.offsetWidth;
-    typeEl.style.animation = 'type 3.2s steps(22) 0.2s forwards, caret 0.7s steps(1) infinite';
-  }
-  setInterval(rotateType, 4200);
-
-  const heart = document.getElementById('heartSvg');
-  function triggerBeat(){
-    heart.classList.remove('beat');
-    void heart.offsetWidth;
-    heart.classList.add('beat');
-    if(navigator.vibrate) navigator.vibrate(50);
-  }
-  heart.addEventListener('click', triggerBeat);
-</script>
 </body>
 </html>
